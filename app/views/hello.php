@@ -15,6 +15,7 @@
     <video autoplay></video>
     <img src="" height=480 width=640 id="img">
     <canvas style="display:none;" id="canvas"></canvas>
+    <p>Click the canvas to take a snapshot</p>
 
     <script>
      var errorCallback = function(e) {
