@@ -14,7 +14,7 @@
 
     <video autoplay></video>
     <img src="" height=480 width=640 id="img">
-    <canvas style="display:none;" id="canvas"></canvas>
+    <canvas style="display:none;" id="canvas" height=480 width=640></canvas>
 
     <script>
      var errorCallback = function(e) {
@@ -51,7 +51,7 @@
      navigator.getUserMedia({video: true}, function(stream) {
        video.src = window.URL.createObjectURL(stream);
        localMediaStream = stream;
-       sizeCanvas(document.querySelector('canvas'), document.querySelector('img'));
+//       sizeCanvas(document.querySelector('canvas'), document.querySelector('img'));
      }, errorCallback);
     </script>
 
