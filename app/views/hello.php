@@ -1,60 +1,230 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <title>Jobphotos</title>
-  </head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
 
+    <title>12,000 Photos</title>
 
-  <body>
-    <h1>JobPhotos</h1>
-    <form>
-      <input type="text" name="folderName" id="folderName" placeholder="Job No."/>
-    </form>
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
 
-    <video autoplay></video>
-    <img src="" height=480 width=640 id="img">
-    <canvas style="display:none;" id="canvas" height=480 width=640></canvas>
+    <style>
+     /*
+      * Globals
+      */
 
-    <script>
-     var errorCallback = function(e) {
-       console.log('Reeeejected!', e);
-     };
-     var video = document.querySelector('video');
-     var canvas = document.querySelector('canvas');
-     var ctx = canvas.getContext('2d');
-     var localMediaStream = null;
-
-     
-
-     function sizeCanvas(canvas, img) {
-       // video.onloadedmetadata not firing in Chrome so we have to hack.
-       // See crbug.com/110938.
-       setTimeout(function() {
-	 canvas.width = video.videoWidth;
-	 canvas.height = video.videoHeight;
-	 img.height = video.videoHeight;
-	 img.width = video.videoWidth;
-       }, 100);
+     /* Links */
+     a,
+     a:focus,
+     a:hover {
+       color: #fff;
      }
-     
-     function snapshot() {
-       if (localMediaStream) {
-	 ctx.drawImage(video, 0, 0, 640, 480);
-	 document.querySelector('img').src = canvas.toDataURL('image/webp');
+
+     /* Custom default button */
+     .btn-default,
+     .btn-default:hover,
+     .btn-default:focus {
+       color: #333;
+       text-shadow: none; /* Prevent inheritence from `body` */
+       background-color: #fff;
+       border: 1px solid #fff;
+     }
+
+
+     /*
+      * Base structure
+      */
+
+     html,
+     body {
+       height: 100%;
+       background-color: #333;
+     }
+     body {
+       color: #fff;
+       text-align: center;
+       text-shadow: 0 1px 3px rgba(0,0,0,.5);
+       box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+     }
+
+     /* Extra markup and styles for table-esque vertical and horizontal centering */
+     .site-wrapper {
+       display: table;
+       width: 100%;
+       height: 100%; /* For at least Firefox */
+       min-height: 100%;
+     }
+     .site-wrapper-inner {
+       display: table-cell;
+       vertical-align: top;
+     }
+     .cover-container {
+       margin-right: auto;
+       margin-left: auto;
+     }
+
+     /* Padding for spacing */
+     .inner {
+       padding: 30px;
+     }
+
+
+     /*
+      * Header
+      */
+     .masthead-brand {
+       margin-top: 10px;
+       margin-bottom: 10px;
+     }
+
+     .masthead-nav > li {
+       display: inline-block;
+     }
+     .masthead-nav > li + li {
+       margin-left: 20px;
+     }
+     .masthead-nav > li > a {
+       padding-right: 0;
+       padding-left: 0;
+       font-size: 16px;
+       font-weight: bold;
+       color: #fff; /* IE8 proofing */
+       color: rgba(255,255,255,.75);
+       border-bottom: 2px solid transparent;
+     }
+     .masthead-nav > li > a:hover,
+     .masthead-nav > li > a:focus {
+       background-color: transparent;
+       border-bottom-color: rgba(255,255,255,.25);
+     }
+     .masthead-nav > .active > a,
+     .masthead-nav > .active > a:hover,
+     .masthead-nav > .active > a:focus {
+       color: #fff;
+       border-bottom-color: #fff;
+     }
+
+     @media (min-width: 768px) {
+       .masthead-brand {
+	 float: left;
+       }
+       .masthead-nav {
+	 float: right;
        }
      }
 
-     video.addEventListener('click', snapshot, false);
 
-     navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
-     navigator.getUserMedia({video: true}, function(stream) {
-       video.src = window.URL.createObjectURL(stream);
-       localMediaStream = stream;
-//       sizeCanvas(document.querySelector('canvas'), document.querySelector('img'));
-     }, errorCallback);
-    </script>
+     /*
+      * Cover
+      */
 
+     .cover {
+       padding: 0 20px;
+     }
+     .cover .btn-lg {
+       padding: 10px 20px;
+       font-weight: bold;
+     }
+
+
+     /*
+      * Footer
+      */
+
+     .mastfoot {
+       color: #999; /* IE8 proofing */
+       color: rgba(255,255,255,.5);
+     }
+
+
+     /*
+      * Affix and center
+      */
+
+     @media (min-width: 768px) {
+       /* Pull out the header and footer */
+       .masthead {
+	 position: fixed;
+	 top: 0;
+       }
+       .mastfoot {
+	 position: fixed;
+	 bottom: 0;
+       }
+       /* Start the vertical centering */
+       .site-wrapper-inner {
+	 vertical-align: middle;
+       }
+       /* Handle the widths */
+       .masthead,
+       .mastfoot,
+       .cover-container {
+	 width: 100%; /* Must be percentage or pixels for horizontal alignment */
+       }
+     }
+
+     @media (min-width: 992px) {
+       .masthead,
+       .mastfoot,
+       .cover-container {
+	 width: 700px;
+       }
+     }     
+    </style>
+  </head>
+
+  <body>
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">12,000 Photos</h3>
+              <ul class="nav masthead-nav">
+                <li class="active"><a href="#">Home</a></li>
+<!--                <li><a href="#">Features</a></li>
+                <li><a href="#">Contact</a></li> -->
+              </ul>
+            </div>
+          </div>
+
+          <div class="inner cover">
+            <h1 class="cover-heading">.</h1>
+            <p class="lead">12,000 Photos is an app that simplifies photo organization for businesses</p>
+	    <p>Organization starts before the photos are even taken.</p>
+	    <p>As photos are taken by any number of users they are uploaded to the cloud, already organized.</p>
+	    <p>View, search, further organize, and download the photos at any time.</p><br>
+	    <p>Simple payment plans based on technology hosted by Amazon and used by major companies worldwide.</p>
+            <p class="lead">
+	      <a href="#" class="btn btn-lg btn-default">Learn more</a> 
+            </p>
+          </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p>&copy; 2014 Devlabtech. <br> <small>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</small></p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
   </body>
-
 </html>
