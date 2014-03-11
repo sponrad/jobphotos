@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+r<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -44,6 +44,7 @@
      body {
        height: 100%;
        background-color: #333;
+       background: url('/images/WP_20131226_005.jpg');
      }
      body {
        color: #fff;
@@ -58,6 +59,7 @@
        width: 100%;
        height: 100%; /* For at least Firefox */
        min-height: 100%;
+       background-color: rgba(0, 0, 0, 0.05);
      }
      .site-wrapper-inner {
        display: table-cell;
@@ -71,6 +73,7 @@
      /* Padding for spacing */
      .inner {
        padding: 30px;
+/*       background-color: rgba(0, 0, 0, 0.2); */
      }
 
 
@@ -199,7 +202,7 @@
 
           <div class="inner cover">
             <h1 class="cover-heading">.</h1>
-            <p class="lead">12,000 Photos is an app that simplifies photo organization for businesses</p>
+            <p class="lead">12,000 Photos simplifies photo organization for businesses</p>
 	    <p>Organization starts before the photos are even taken.</p>
 	    <p>As photos are taken by any number of users they are uploaded to the cloud, already organized.</p>
 	    <p>View, search, further organize, and download the photos at any time.</p><br>
