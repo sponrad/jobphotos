@@ -40,6 +40,8 @@
 		<li>{{ HTML::link('/register', 'Register') }}</li>   
 		<li>{{ HTML::link('/login', 'Login') }}</li>
 	      @else
+		<li><a href="/home">Home</a></li>
+		<li><a href="/logout">Logout</a></li>
 		<li class="dropdown">
 		  <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->firstname.' '.Auth::user()->lastname }} <b class="caret"></b></a>
 		  <ul class="dropdown-menu">

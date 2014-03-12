@@ -8,3 +8,5 @@ composer.lock
 Thumbs.db
 *~
 /app/config/database.php
+/aws
+/app/config/globals.php
