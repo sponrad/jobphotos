@@ -21,9 +21,11 @@
      $('#fileupload').fileupload({
        url: url,
        dataType: 'json',
+       acceptFileTypes: /(\.|\/)(gif|jpe?g|png|bmp)$/i,
        done: function (e, data) {
          $.each(data.result.files, function (index, file) {
-           $('<p/>').text(file.name).appendTo('#files');
+           //$('<p/>').text(file.name).appendTo('#files');
+	   $("<img />").attr("src", file.name).appendTo("#files");
          });
        },
        progressall: function (e, data) {

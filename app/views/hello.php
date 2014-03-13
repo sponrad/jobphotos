@@ -193,7 +193,7 @@
 
           <div class="masthead clearfix">
             <div class="inner">
-              <h3 class="masthead-brand">12,000 Photos</h3>
+              <h3 class="masthead-brand" style="font-family: Lucida Sans Unicode;">	      <img src="/images/rect5619.png" height=40/> Photos</h3>
               <ul class="nav masthead-nav">
                 <li class="active"><a href="#">Home</a></li>
 		<!--                <li><a href="#">Features</a></li>
