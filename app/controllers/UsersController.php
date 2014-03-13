@@ -6,6 +6,7 @@ class UsersController extends BaseController {
     public function __construct(){
         $this->beforeFilter('csrf', array('on'=>'post'));
         $this->beforeFilter('auth', array('only'=> array('getHome')));
+        $this->beforeFilter('auth', array('only'=> array('getSettings')));
     }
 
     public function getRegister() {
@@ -34,6 +35,10 @@ class UsersController extends BaseController {
 
     public function getHome(){
         return View::make('users.home');
+    }
+
+    public function getSettings(){
+        return View::make('users.settings');
     }
 
     public function postCreate() {

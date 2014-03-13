@@ -1,0 +1,36 @@
+super super simple
+tell your friends what is good to eat
+
+add signup form to landing page and link to login page
+login and accounts, login.php signup.php logout.php
+after logging -> home screen feed.php , trending page of friends (later we have api hookups)
+	trending page shows madlib and photo +/-
+button to vote .... vote.php
+	photo
+	restaurant
+	dish
+	madlib
+	+/-
+	(so a vote has geo data)
+profile page  profile.php?i=121
+	same as trending page but just filtered for you
+some way to follow and connect
+
+
+
+Feed.
+
+get all activity of all your friends... so
+Users.all().filter("friends", userid).activity().sort(date) ???
+Reveiws.all().filter("owner" IN (listoffriendids)).sort(date).limit(50)
+
+common to all pages:
+if user logged in information in a cookie or localstorage, set a variable
+can easily check for login, and access data for logged in user
+
+
+LATER we do search and yadadada
+Search for a friend add friend
+
+website
+appstore
