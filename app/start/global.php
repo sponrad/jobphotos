@@ -1,6 +1,6 @@
 <?php
 
-require '/../../aws/aws-autoloader.php';
+require '/aws/aws-autoloader.php';
 /*
 |--------------------------------------------------------------------------
 | Register The Laravel Class Loader

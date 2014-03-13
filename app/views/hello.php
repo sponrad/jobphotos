@@ -45,7 +45,8 @@
        height: 100%;
        background-color: #333;
        background: url('/images/WP_20131226_005.jpg');       
-       background-size: 100%;
+       background-repeat: no-repeat;
+
      }
      body {
        color: #fff;
@@ -60,7 +61,7 @@
        width: 100%;
        height: 100%; /* For at least Firefox */
        min-height: 100%;
-       background-color: rgba(0, 0, 0, 0.065);
+       background-color: rgba(0, 0, 0, 0.25);
      }
      .site-wrapper-inner {
        display: table-cell;
