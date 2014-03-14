@@ -22,5 +22,9 @@ Route::get('/upload', function(){ return "use POST"; });
 Route::post('/upload', 'UploadController@postUploads');
 Route::get('/settings', 'UsersController@getSettings');
 
+Route::post('/json/login', 'JSONController@postSignin');
+
+Route::get('/json/login', function(){ return View::make('jsonLogin'); });
+
 
 Route::get('/', function(){ return View::make('hello'); });

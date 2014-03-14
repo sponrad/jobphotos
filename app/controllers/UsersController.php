@@ -18,7 +18,12 @@ class UsersController extends BaseController {
     }
 
     public function postSignin() {
-        if (Auth::attempt(array('email'=>Input::get('email'), 'password'=>Input::get('password')), true)) {
+        if (Auth::attempt(
+            array(
+                'email'=>Input::get('email'), 
+                'password'=>Input::get('password')), 
+            true)
+        ) {
 //            return Redirect::to('users/home')->with('message', 'You are now logged in!');
             return Redirect::to('/home');
         } else {
