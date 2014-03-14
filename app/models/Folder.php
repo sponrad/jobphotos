@@ -4,7 +4,7 @@ class Folder extends Eloquent{
     protected $table = 'folders';
 
     public function files(){
-        return $this->hasMany('File', 'folder_id');
+        return $this->hasMany('TFile', 'folder_id');
     }
 
     public function user(){

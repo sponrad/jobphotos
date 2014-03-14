@@ -60,6 +60,18 @@ class UsersController extends BaseController {
         return Redirect::to('/home')->with('message', 'Folder created');
     }
 
+    public function getFolder($folderId, $folderName){
+        $user = Auth::user();
+        $folder = Folder::find($folderId);
+        $files = TFile::where("folder_id", "=", $folder->id)->get();
+        
+        return View::make('users.folder')->with(
+            array(
+                "folder" => $folder,
+                "files" => $files,
+            ));
+    }
+
     public function getSettings(){
         return View::make('users.settings');
     }
