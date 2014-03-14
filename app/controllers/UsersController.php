@@ -39,7 +39,25 @@ class UsersController extends BaseController {
     }
 
     public function getHome(){
-        return View::make('users.home');
+        $user = Auth::user();
+        $folders = Folder::where("user_id", "=", $user->id)->get()->sortBy('name');
+        return View::make('users.home')->with(
+            array(
+                'folders' => $folders
+            ));
+    }
+    
+    public function postHome(){
+        //create a new folder
+        $action = Input::get('action');
+        if ($action == "createfolder"){
+            $user = Auth::user();
+            $folder = new Folder;
+            $folder->user()->associate($user);
+            $folder->name = Input::get('foldername');
+            $folder->save();
+        }
+        return Redirect::to('/home')->with('message', 'Folder created');
     }
 
     public function getSettings(){

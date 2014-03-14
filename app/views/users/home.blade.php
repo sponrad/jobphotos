@@ -72,15 +72,43 @@
   ?>
 
 
-  <h1>home</h1>
-  <input type="text" id="searchInput" placeholder="Search" />
-  <p>Browse Folders - New Folder</p>
+  <input type="text" placeholder="Search" style="float: right;" />
+  
+  <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">New Folder</button>
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+	<div class="modal-header">
+	  <h2>New Folder</h2>
+	</div>
+	<div class="modal-body">
+	  {{ Form::open(array('url'=>'/home', 'class'=>'form-new-folder')) }}
+	  {{ Form::hidden('action', 'createfolder') }}
+	  {{ Form::text('foldername', null, array('class'=>'input-block-level', 'placeholder'=>'Folder Name')) }}
+	  <br>
+	  {{ Form::submit('Create', array('class'=>'btn btn-large btn-primary')) }}
+	  {{ Form::close() }}
+	</div>
+      </div>
+    </div>
+  </div>
+
+  
+
+  @if (count($folders) > 0)
+    @foreach($folders as $key => $folder)
+      <br>
+      <a href="/home/{{ $folder->id }}-{{ $folder->name }}">{{ $folder->name }}</a>
+    @endforeach
+  @endif
+
   <input id="fileupload" type="file" name="files[]" multiple>
   <!-- The global progress bar -->
   <div id="progress" class="progress">
     <div class="progress-bar progress-bar-success"></div>
   </div>
   <!-- The container for the uploaded files -->
-  <div id="files" class="files"></div>
+  <div id="files" class="files"></div> 
+
   
 @stop

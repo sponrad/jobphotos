@@ -18,6 +18,8 @@ Route::post('/register', 'UsersController@postCreate');
 Route::get('/logout', 'UsersController@getLogout');
 
 Route::get('/home', 'UsersController@getHome');
+Route::post('/home', 'UsersController@postHome');
+
 Route::get('/upload', function(){ return "use POST"; });
 Route::post('/upload', 'UploadController@postUploads');
 Route::get('/settings', 'UsersController@getSettings');
