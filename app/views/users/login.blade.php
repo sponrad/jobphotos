@@ -2,7 +2,7 @@
 
 @section('content') 
   {{ Form::open(array('url'=>'/login', 'class'=>'form-signin')) }}
-  <h2 class="form-signin-heading">Please Login</h2>
+  <h2 class="form-signin-heading">Please Sign In</h2>
   
   {{ Form::text('email', null, array('class'=>'input-block-level', 'placeholder'=>'Email Address')) }}
   {{ Form::password('password', array('class'=>'input-block-level', 'placeholder'=>'Password')) }}

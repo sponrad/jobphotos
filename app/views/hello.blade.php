@@ -201,10 +201,11 @@
               <ul class="nav masthead-nav">
 		@if(!Auth::check())
                 <li class="active"><a href="#">Home</a></li>
+                <li class="active"><a href="/login">Sign In</a></li>		
 		@else
                 <li class="active"><a href="/home">Home</a></li>
+                <li class="active"><a href="/logout">Logout</a></li>
 		@endif
-                <li class="active"><a href="/login">Login</a></li>		
 		<!--                <li><a href="#">Features</a></li>
                 <li><a href="#">Contact</a></li> -->
               </ul>
