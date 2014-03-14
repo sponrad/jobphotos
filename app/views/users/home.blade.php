@@ -73,6 +73,8 @@
 
 
   <h1>home</h1>
+  <input type="text" id="searchInput" placeholder="Search" />
+  <p>Browse Folders - New Folder</p>
   <input id="fileupload" type="file" name="files[]" multiple>
   <!-- The global progress bar -->
   <div id="progress" class="progress">
@@ -80,8 +82,5 @@
   </div>
   <!-- The container for the uploaded files -->
   <div id="files" class="files"></div>
-
-  <br><br><br>
-  <p>File browser</p>
   
 @stop
