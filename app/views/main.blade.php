@@ -22,7 +22,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">12,000 Photos</a>
+            <a class="navbar-brand" href="/"><img src="/images/rect5619.png" height=30 /> Photos</a>
           </div>
           <div class="navbar-collapse collapse">
 
@@ -42,6 +42,7 @@
 	      @else
 		<li><a href="/home">Home</a></li>
 		<li><a href="/logout">Logout</a></li>
+		<!--
 		<li class="dropdown">
 		  <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->firstname.' '.Auth::user()->lastname }} <b class="caret"></b></a>
 		  <ul class="dropdown-menu">
@@ -55,6 +56,7 @@
 		    <li><a href="/logout"><span class="glyphicon glyphicon-off"></span>Logout</a></li>
 		  </ul>
 		</li>
+		-->
 	      @endif
             </ul>
           </div><!--/.nav-collapse -->
@@ -73,11 +75,13 @@
     <footer>
       <div class="container">
 	<p>
-	  &copy;<?php echo date("Y"); ?> Devlabtech &middot; 
+	  &copy;<?php echo date("Y"); ?> Devlabtech
+	  <!-- &middot; 
 	  <a href="/privacy">Privacy</a> &middot; 
 	  <a href="/terms">Terms</a> &middot; 
 	  <a href="/features">Features</a> &middot; 
 	  <a href="/about">About</a>
+	  -->
 	</p>
       </div>
     </footer>

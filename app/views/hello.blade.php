@@ -46,6 +46,10 @@
        background-color: #333;
        background: url('/images/WP_20131226_005.jpg');       
        background-repeat: no-repeat;
+       background-size: cover;
+       background-position: center;
+       width: 100%;
+       height: 100%;
 
      }
      body {
@@ -195,7 +199,12 @@
             <div class="inner">
               <h3 class="masthead-brand" style="font-family: Lucida Sans Unicode;">	      <img src="/images/rect5619.png" height=40/> Photos</h3>
               <ul class="nav masthead-nav">
+		@if(!Auth::check())
                 <li class="active"><a href="#">Home</a></li>
+		@else
+                <li class="active"><a href="/home">Home</a></li>
+		@endif
+                <li class="active"><a href="/login">Login</a></li>		
 		<!--                <li><a href="#">Features</a></li>
                 <li><a href="#">Contact</a></li> -->
               </ul>
@@ -204,19 +213,19 @@
 
           <div class="inner cover">
             <h1 class="cover-heading">12,000 Photos</h1>
-            <p class="lead">Simple photo organization for businesses</p>
+            <p class="lead">Photo Organization for Businesses</p>
 	    <p>Organization starts before the photos are taken.</p>
 	    <p>All photos are automatically uploaded to the cloud, already organized.</p>
 	    <p>View, search, further organize, and download the photos at any time.</p><br>
-	    <p>Simple payment plans and hosted on Amazon technology that is used by major companies worldwide.</p>
+	    <p>Simple payment plans and hosted on technology that is used by major companies worldwide.</p>
             <p class="lead">
-	      <a href="#" class="btn btn-lg btn-default">Learn more</a> 
+	      <a href="/register" class="btn btn-lg btn-default">Register</a> 
             </p>
           </div>
 
           <div class="mastfoot">
             <div class="inner">
-              <p>&copy; 2014 Devlabtech. <!-- <br> <small>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</small> --></p>
+              <p>&copy; 2014 Devlabtech <!-- <br> <small>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</small> --></p>
             </div>
           </div>
 
